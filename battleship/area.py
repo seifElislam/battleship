@@ -7,10 +7,12 @@ class Area:
     """
     Area class
     """
-    def __init__(self, coordinate):
+    def __init__(self, x_coordinate, y_coordinate):
         """
 
-        :param coordinate: tuple (x,y)
+        :param x_coordinate:
+        :param y_coordinate:
         """
-        self.coordinate = coordinate
+        self.x_coordinate = x_coordinate
+        self.y_coordinate = y_coordinate
         self.status = 1
