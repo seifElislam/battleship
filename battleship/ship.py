@@ -1,7 +1,6 @@
 """
 Ship module
 """
-from battleship.area import Area
 
 
 class Ship:
@@ -14,8 +13,8 @@ class Ship:
         :param areas:
         """
         self.head = None
-        self.areas = areas
         self.status = 1
+        self.add_areas(areas)
 
     def add_areas(self, areas):
         """
@@ -24,8 +23,9 @@ class Ship:
         :return:
         """
         for area in areas:
-            if area.next:
-                raise Exception
+            if area.next or area.get_belong_to_ship():
+                raise Exception('Two shipments overlap')
+            area.set_belong_to_ship()
             ptr1 = area
             temp = self.head
 
