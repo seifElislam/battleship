@@ -37,5 +37,6 @@ def shot():
 
 @app.route('/battleship', methods=['DELETE'])
 def delete_battleship_game():
+    global game
     del game
     return jsonify({"result": "deleted"}), HTTPStatus.OK
