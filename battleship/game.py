@@ -13,11 +13,24 @@ class Game:
 
         :param board_size:
         """
-        self.board_size = board_size
+        self.board = Board(board_size)
 
-    def add_ship(self):
-        pass
+    def add_ship(self, x, y, size, direction):
+        """
 
-    def verify_area(self):
-        pass
+        :param x:
+        :param y:
+        :param size:
+        :param direction:
+        :return:
+        """
+        self.board.add_ship(x, y, size, direction)
 
+    def handle_shot(self, x, y):
+        """
+
+        :param x:
+        :param y:
+        :return:
+        """
+        return self.board.handle_shot(x, y)
